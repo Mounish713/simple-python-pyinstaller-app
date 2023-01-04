@@ -14,11 +14,13 @@ pipeline {
         stage('Build') {
             agent {
                 steps {
-                sh '''
-                      pip install -r requirements.txt
-                    '''
+                sh 'pip install -r requirements.txt'
+                      
+                 
             }
             }
+            
+            
             steps {
                 
                 sh 'python -m py_compile sources/add2vals.py sources/calc.py'
